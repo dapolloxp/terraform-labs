@@ -32,5 +32,8 @@ resource "azurerm_virtual_network" "VNET" {
 }
 
 resource "azurerm_public_ip" "pip" {
-  name = "vpnGatewayPublicIp"
+  name                         = "vpnGatewayPublicIp"
+  location                     = "${azurerm_resource_group.core.location}"
+  resource_group_name          = "${azurerm_resource_group.core.name}"
+  public_ip_address_allocation = "dynamic"
 }
