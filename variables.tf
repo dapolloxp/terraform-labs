@@ -1,16 +1,11 @@
-variable "rg" {
-    default = "terraform-lab2"
-}
-
 variable "loc" {
-    default = "East US 2"
+  description = "Default Azure region"
+  default     = "eastus2"
 }
 
 variable "tags" {
-    type = "map"
-    default = {
-        environment = "training"
-        source      = "citadel"
-        prefix      = "apolinar"
-    }
+  default = {
+    source = "citadel"
+    env    = "training"
+  }
 }
